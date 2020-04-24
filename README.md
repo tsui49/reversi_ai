@@ -12,6 +12,7 @@ WindowsとGoogle Colaboratoryでのみ動作確認済.
 1. `creversi/`と`creversi_gym/`でそれぞれ`pip install -e .`を実行.  
 1. 以下のLearning, Game Playへと進む.
 
+
 ## Learning  
 creversi_gym/creversi_gymにある`dqn.py`, `dqn_parallel.py`, `dqn_per.py`の中から学習させたいモデルを選択. オプションにより保存する学習データ名やイテレーション数などの変更が可能.  
 
@@ -37,6 +38,7 @@ creversi_gym/creversi_gymにある`dqn.py`, `dqn_parallel.py`, `dqn_per.py`の�
 
 ## Game play
 `creversi_gym/creversi_gym/gameplay.py`を実行することでゲーム開始.  
+
 
 ### オプションの説明
 - player1, player2: 'random', 'greedy', 'softmax', 'human'から選択. player1が先攻, 黒色.  
