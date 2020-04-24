@@ -1,26 +1,31 @@
-# gym環境におけるリバーシAI  
+# Gym環境におけるリバーシAI  
 以下のライブラリを応用してリバーシAIを作りました.  
 https://github.com/TadaoYamaoka/creversi  
 https://github.com/TadaoYamaoka/creversi_gym  
 
-Windowsでのみ動作確認済.  
-Google ColaboratoryではCythonのインストールなどの前処理が必要.  
+WindowsとGoogle Colaboratoryでのみ動作確認済.  
+なお、OpenAI Gym(Google Colabの場合不要)とCythonのインストールが必要.  
 
 
-# Learning  
+## How to use  
+1. Google Colabの場合はGoogle Driveのマウントを行う.  
+1. `creversi/`と`creversi_gym/`でそれぞれ`pip install -e .`を実行.  
+1. 以下のLearning, Game Playへと進む.
+
+## Learning  
 creversi_gym/creversi_gymにある`dqn.py`, `dqn_parallel.py`, `dqn_per.py`の中から学習させたいモデルを選択. オプションにより保存する学習データ名やイテレーション数などの変更が可能.  
 
-## 各モデルの説明  
-- dqn.py
+### 各モデルの説明  
+- `dqn.py`
     - バニラDQN.  
-- dqn_parallel.py  
+- `dqn_parallel.py`  
     - 環境を並列化したDQN.
     - DDQN, Duelingも可能.  
-- dqn_per.py
+- `dqn_per.py`
     - 優先順位付き経験再生を用いたDQN.  
     - DDQN, Duelingも可能.  
 
-## オプションの説明  
+### オプションの説明  
 - --ddqn: DDQNで学習する. (`dqn_parallel.py`, `dqn_per.py`)  
 - --dueling: Dueling Networkで学習する. (`dqn_parallel.py`, `dqn_per.py`)  
 - --model: 保存する学習データ名. デフォルトは'model.pt'.  
@@ -30,10 +35,10 @@ creversi_gym/creversi_gymにある`dqn.py`, `dqn_parallel.py`, `dqn_per.py`の�
 - --num_iterations: 学習イテレーション数を指定. デフォルトは10000. (`dqn_parallel.py`, `dqn_per.py`)  
 - --log: ログデータを指定したファイルに保存する.
 
-# Game play
-creversi_gym/creversi_gymにある`gameplay.py`を実行することでゲーム開始.  
+## Game play
+`creversi_gym/creversi_gym/gameplay.py`を実行することでゲーム開始.  
 
-## オプションの説明
+### オプションの説明
 - player1, player2: 'random', 'greedy', 'softmax', 'human'から選択. player1が先攻, 黒色.  
 - --model1: player1に使用する学習データ. デフォルトは'model.pt'
 - --model2: player2に使用する学習データ.  

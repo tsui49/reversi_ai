@@ -1,5 +1,3 @@
-.gitattributes
-.gitignore
 LICENSE
 README.rst
 creversi.pyproj
